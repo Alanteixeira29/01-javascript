@@ -1,0 +1,578 @@
+/*
+//=================================================================
+//           TIPOS DE DADOS
+
+    boolean     - true / false
+    null        - Quando a variável está vazia, sem nenhum dado 
+    undefined   - Quando a variável não foi definida ou atibuida
+    number      - Numeros com a possibilidade de executar operações matemáticas
+    string      - Cadeia de caracteres formando textos, frases ou palavras 
+//=================================================================
+//          Comandos
+    /n          - Faz uma quebra de linha semelhante ao <br> do HTML
+    Math.random()   - aleatório de 0 a 1 , multiplica para ter um numero maior  
+                      EX: Math.random() * 100  (aleatório de 0 a 100)
+//=================================================================
+//            OPERADORES ARITMÉTICOS
+    =     - Atribuição
+    +     - Soma
+    -     - Subtração
+    *     - Multiplicação
+    /     - Divisão
+    %     - Módulo ( resto da divisão )
+    ++    - Incremento
+    --    - Decremento     --a decrementa e depois atribui, a-- atribui depois decrementa
+    +=    - Incrementa ele mais o valor     a += 3  ==  a = a + 3 
+    -=    - decrementa ele menos o valor    a -= 3      a = a - 3
+    *=    - Multiplica ele vezes o valor
+    /=    - Divide ele pelo valor           a /= 3      a = a / 3
+    %=    - Modulo dele pelo valor          a %= 3      a = a % 3
+//=================================================================
+//            OPERADOR DE COMPARAÇÃO
+    ==    - Igual a ... , BEM IGUAL , compara valor
+    ===   - Valor igual e igual, MUITO IGUAL , compara valor e tipo
+    !=    - Não é igual ,  BEM DIFERENTE , COMPARA VALOR
+    !==   - Não igual ou não igual, MUITO DIFERENTE , , compara valor e tipo
+    >     - Maior que
+    <     - Menor que
+    >=    - Maior ou igual
+    <=    - Menor ou igual
+//=================================================================
+//            OPERADORES LÓGICOS
+    &&    - E lógico
+    ||    - OU lógico
+    negativo    - Negação, valido somente para boolenos
+
+//=================================================================
+//            TRANSFORMAR STRING EM NUMBER
+        "1" + "1"   == 11   pois os dois são strings
+        1   + "1"   == 2    pois ao menos um é number
+    parseInt( variavel )        tranforma o valor da variavel em inteiro.  parseInt( idade ) + parseInt( numeroStri )
+                                parseInt em numero real só pega o inteiro do numero dispensando as casas decimais
+    parseFloat( variavel )      tranforma o valor da variavel em real.  parseFloat( idade ) + parseFloat( numeroStri )
+
+//=================================================================
+//            EXIBINDO MENSAGENS NA TELA
+    
+    Alert       - Exibe um popup de nensagem na tela
+    Prompt      - Abre um popup com uma mensagem solicitando algo
+
+    var nome = prompt("digite seu nome")
+
+    alert ("Olá, seja bem vindo " + nome )
+
+//=================================================================
+//            ESTRUTURA CONDICIONAL EM JAVASCRIPT - IF
+//    SE          if
+//    SENAO       else
+//    SENAO SE    else if
+
+    var idade = prompt("qual sua idade?") ;
+    if ( (idade >= 16 ) && (idade < 70) ) {
+        console.log(idade);
+        console.log("Precisa votar");
+    }
+
+    else if (idade > 5000){
+        console.log("Salve Raul Seixas, a quanto tempo ")
+     }
+    
+    else {
+        console.log(idade);
+        console.log("Não precisa votar");
+    }
+
+    
+/*
+            Bloco de comandos
+    Quando usamos mais de uma linha decomando, precisamos criar um bloco de comando.
+    
+    Como fazer?
+    Com a abertura e fechamnto de chaves, ficando assim
+
+    var idade = 17;
+    if (idade >= 18 ){
+        console.log("Pode");
+        console.log("O que deseja beber? ");
+    }    
+    else{
+        console.log("Não pode");
+        console.log("Volte em alguns anos.");
+    }
+
+//=================================================================
+
+//            OPERADOR TERNÁRIO
+//    ?       - igual ao if  
+//    :       - Igual ao else
+//   var pode = idade >= 18 ? true : false ;
+    
+    var idade = 16;
+
+    var pode = idade >= 18 ? "PODE" : "NÃO PODE" ;
+    console.log( pode ); 
+
+*/
+//=================================================================
+//            ESTRUTURA DE ESCOLHA - SWITCH CASE 
+
+//    Escolha     switch( variavel )
+//    caso        case
+//    outrocaso   default
+
+    var nota = prompt("Qual a nota do aluno? "); //le a nota
+    nota = parseInt(nota); // transforma de string para inteiro
+    switch( nota ){
+        case 10 :
+            console.log("Parabens"); 
+            break;  
+        case 7 :
+            console.log("Muito bem, conseguiu passar");  
+            break 
+        case 6 :
+            console.log("Não foi desta vez, precisa estudar mais"); 
+            break;
+            
+        default :  console.log("Nota não registrada");  
+            break;
+    }
+
+
+//=================================================================
+//            ESTRUTURA DE REPETIÇÃO OU LOOP - FOR  e  WHILE
+    
+    var nome = ["joao","jose","maria","craudia","miguelito",
+    "joao","jose","maria"]
+    var numero = nome.length; // retorna o tamanho do array
+    for (var i = 0 ; i < numero ; i++ ) {
+        console.log("Indice " + i + " - " + nome[i]);
+    }
+    console.log("Acabou, todos os ", numero);
+
+//========================================================
+// ============== CALCULADORA EM JS =======================
+   var result = 0.0;
+   var num1 = prompt("Qual o primeiro número? ");
+   num1 = parseFloat(num1);
+   var op = prompt("Qual o operador? ( + - * / ) "); 
+   var num2 = prompt("Qual o segundo número? "); 
+   num2 = parseFloat(num2);
+   
+   switch( op ){
+        case "+" :
+            result = num1 + num2; 
+            break;
+        case "-" :
+            result = num1 - num2; 
+            break;
+        case "*" :
+            result = num1 * num2; 
+            break;
+        case "/" :
+            result = num1 / num2; 
+            break;  
+        default :  
+            alert("Operação inválida!"); 
+            break;
+   }
+        alert("Resultado: " + result );
+        
+//========================================================
+// ============== CALCULADORA EM CONSOLE JS ====================
+   var result = 0.0;
+   var num1 = prompt("Qual o primeiro número? ");
+   num1 = parseFloat(num1);
+   var op = prompt("Qual o operador? ( + - * / ) "); 
+   var num2 = prompt("Qual o segundo número? "); 
+   num2 = parseFloat(num2);
+   
+   switch( op ){
+        case "+" :  result = num1 + num2; break;
+        case "-" :  result = num1 - num2; break;
+        case "*" :  result = num1 * num2; break;
+        case "/" :  result = num1 / num2; break;  
+        default :   alert("Operação inválida!"); break;
+   }
+        alert("Resultado: " + result );
+
+
+//==========================================================
+// ============== CALCULADORA EM CONSOLE JS com % ====================
+var result = 0.0;
+var num1 = prompt("Qual o primeiro número? ");
+num1 = parseFloat(num1);
+var op = prompt("Qual o operador? ( + - * / % ) "); 
+var num2 = prompt("Qual o segundo número? "); 
+num2 = parseFloat(num2);
+
+switch( op ){
+     case "+" :  result = num1 + num2; break;
+     case "-" :  result = num1 - num2; break;
+     case "*" :  result = num1 * num2; break;
+     case "/" :  result = num1 / num2; break; 
+     case "%" :  result = ((num2 / 100 ) * num1); 
+     break; 
+
+     default :   alert("Operação inválida!"); break;
+}
+     alert("Resultado: " + result );        
+
+
+//==========================================================
+// ================ CALCULADORA BINÁRIOS ====================
+
+var num = prompt("Qual o número decimal a converter para binário? ");
+num = parseInt(num);
+var bin = [] ;
+var inverte = "" ;
+var divid = num ;
+var i = 0 ;
+while (divid >=2) {
+    bin[i] = divid % 2 ;    
+    divid -=  bin[i] ;
+    divid /= 2 ; 
+    i++ ;
+    if ( divid < 2 ) {  bin[i]=divid } ;
+}
+
+for(var x=(bin.length - 1) ; x >= 0 ; x-- ) {
+    inverte = inverte + bin[x];    
+}
+console.log(inverte);
+alert("Resultado da conversão Binária de " + num + " é : " + inverte)
+
+//==========================================================
+// ================ LAÇO DE REPETIÇÃO WHILE ====================
+
+var numero = 5
+    while (numero < 10 ){
+        console.log("Número " + numero);
+        numero++;
+    }
+
+
+//=================================================================
+//            ARRAYs OU VETORES
+
+    var alunos = new Array("João","Maria","Bruxa");
+    console.log(alunos);
+    console.log("Aluno : " + alunos[1])
+    console.log("===============");
+    console.log("== For normal==");
+   for (var i = 0; i<alunos.length; i++){
+       console.log(alunos[i]);
+   }
+    console.log("===============");
+    console.log("==== For IN ===");
+    for (var i in alunos ){  // in é o index indice do vetor, logo passará por todos
+        console.log(alunos[i]);
+    }
+    console.log("===============");
+    console.log("==== For OF ===");
+    for (var i of alunos ){   // of busca o elemento do array e nao o indice.
+        console.log(i);
+    }
+    console.log("===============");
+
+
+
+    
+  //=================================================================
+//            FUNCTIONs OU FUNÇÕES COM  PASSAGEM DE PARAMETROS
+
+    function media(n1,n2){
+        var media = (n1 + n2) /2 ;
+        alert(media) ;
+    }
+    var nota1 = prompt("primeira nota: ") ;
+    nota1 = parseFloat(nota1);
+    var nota2 = prompt("segunda nota: ") ;
+    nota2 = parseFloat(nota2);
+    media(nota1,nota2)
+
+
+    
+  //=================================================================
+//            FUNCTIONs OU FUNÇÕES SEM PASSAGEM DE PARAMETROS
+
+    function media(){
+        var nota1 = 9 ;
+        var nota2 = 8 ;
+        media = (nota1 + nota2) /2 ;
+        alert(media) ;
+    }
+    media()
+
+ //================================================================
+
+
+    function media(n1 , n2){
+        var med = (n1 + n2) /2 ;
+        return(med);
+    }
+    var result = media(7 , 9 ) ;
+    console.log(result) ;
+
+
+/  funções para calcular media e dizer se foi aprovado   
+    
+    var nomes = ["Jõao" , "Maria" , "José"] ;
+    var nota1 = [7.0 , 4.0 , 8.5] ;
+    var nota2 = [9.5 , 6.5 , 7.5] ;
+
+    function media(n1,n2){
+        return((n1+n2)/2);
+    }
+
+    function passou(media){
+        if (media >=7 ) {
+            return ("Aprovado") ;
+        }
+        else{
+            return ("Reprovado") ;
+        }
+    }
+
+    for ( var i in nomes ){
+        var nome = nomes[i] ;
+        var notaA = nota1[i] ;
+        var notaB = nota2[i] ;
+        var med = media(notaA,notaB) ;
+        if (passou(med)== "Aprovado"){
+            console.log(nome +" - "+ notaA +
+            " - "+ notaB + " - "+ med +" - "
+            + passou(med)) ;
+        }
+        else{
+            alert("ATENÇÃO: " + nome +" - "+ notaA + 
+            " - " + notaB + " - "+ med +" - está "
+            + passou(med)) ;
+        }
+    }
+    
+  */  
+    /* */
+//------------------------------------------------------------
+
+
+
+
+
+//------------------------------------------------------------
+
+
+/*  
+//------------------------------------------------------------
+//  funções para calcular media e dizer se foi aprovado   
+    
+    var nomes = ["Jõao" , "Maria" , "José"] ;
+    var nota1 = [7.0 , 9.0 , 8.5] ;
+    var nota2 = [9.5 , 6.5 , 7.5] ;
+    
+    var cpf = [ "99988877766", "11122233344","55544466655"]
+    var bcpf = prompt("Qual seu CPF? ") ;
+    
+    for (var i=0 ; i< cpf.length ; i++ ){
+        if (cpf[i] == bcpf){ 
+            console.log("Olá " + nomes[i]);
+            med = media(nota1[i],nota2[i]);
+            alert("Olá " + nomes[i] +" - "+ nota1[i] + 
+            " - " + nota2[i] + " - "+ med +" - está "
+            + passou(med)) ;
+        }
+        else{
+            alert('O CPF informado não foi encontrado')
+        }
+    }
+
+    function media(n1,n2){
+        return((n1+n2)/2);
+    }
+
+    function passou(media){
+        if (media >=7 ) {
+            return ("Aprovado") ;
+        }
+        else{
+            return ("Reprovado") ;
+        }
+    }
+
+*/
+
+
+    /*
+
+    for ( var i in nomes ){
+        var nome = nomes[i] ;
+        var notaA = nota1[i] ;
+        var notaB = nota2[i] ;
+        var med = media(notaA,notaB) ;
+        if (passou(med)== "Aprovado"){
+            console.log(nome +" - "+ notaA +
+            " - "+ notaB + " - "+ med +" - "
+            + passou(med)) ;
+        }
+        else{
+            alert("ATENÇÃO: " + nome +" - "+ notaA + 
+            " - " + notaB + " - "+ med +" - está "
+            + passou(med)) ;
+        }
+    }
+    
+  */
+   
+
+
+
+ /* */
+
+
+
+//=================================================================
+//            OBJETOS
+
+//Parecido com o Array, mas agora com chaves, 
+// podendo receber um valor de qualquer tipo inclusive 
+// um array ou outro objeto
+
+//    var objeto = new Object{ item1:"conteudo1" , item2: "conteudo2"}
+
+    var aluno = { nome: "José" , notas:[7.0,8.5,8.0]  }
+
+    console.log(aluno); //sem as propriedadesimprime tudo
+
+
+
+
+// receber uma nova propriedade    
+
+    aluno.matricula = 987654 ;
+//    aluno.sobrenome = "das Couves"
+    aluno["sobrenome"] = "das Couves"  // assim podemos criar ma variável 
+                                      //para receber o "sobrenome" 
+   
+
+
+//=================================================================
+
+
+
+//-----------------------------------------------------------------
+//            OBJETOS COM FUNÇÃO
+
+    function calcmedia() {
+        return ( (this.notas[0] + this.notas[1]  + this.notas[2]) / 3 );
+    }
+    var aluno ={ 
+        nome: "Alcemar",
+        notas: [9,9.5,10],            
+        media: calcmedia ,
+    }
+    var aluno1 ={ 
+        nome: "Zé" ,
+        notas: [8,7.5,9] ,
+        media: calcmedia ,
+        
+    }    
+
+
+    console.log(aluno.nome);
+    console.log(aluno.media());
+    console.log(aluno1.nome);
+    console.log(aluno1.media());
+
+
+//-----------------------------------------------------------------
+//           FUNÇÃO PARA CRIAR ARRAY
+
+    function criarAluno(nome,n1,n2){
+        return {
+            nome: nome,
+            nota1: n1,
+            nota2: n2,
+            media: function() {
+                return( ( this.nota1 + this.nota2) / 2 );
+            }
+        }
+    }
+    var turma = [
+        criarAluno("Adão",9, 7),
+        criarAluno("Eva",8,6.5),
+        criarAluno("Snake", 9, 7.5)
+    ]
+
+
+//==================================================
+//=====  FUNCIONALIDADES DE MOUSE NO JS =============
+//==================================================
+-------------------------------------------------------------
+HTML:
+-------------------------------------------------------------
+<!-- onload -> após todo html ser carregado carrega seu conteudo  -->
+<body onload="console.log('página carregada por completo')">
+<h1> Clicando e testando </h1>
+<!--
+this -> Refere-se ao elemento pai que o contém, neste caso o img     
+onclick="clicar(this)" -> Ao clique do mouse executa a função clicar com o parametro this
+onmouseover="style.width='500px'" -> Quando o mouse estiver encima da imagem ela recebe largura de 500px 
+onmouseout="style.width='300px'" ->  Quando o mouse sai do foco da imagem ele recebe largura de 300px
+-->
+<img src="./imagens/500pila.jpg" alt="Minha imagem" id="imagem"  
+style="width: 300px"  
+onclick="clicar(this)" 
+onmouseover="style.width='500px'" 
+onmouseout="style.width='300px'" >
+
+<div onmouseover="onOver(this)"  
+    onmouseout="onOut(this)" 
+    onClick="innerText='Foi Clicado'"> Passe aqui </div>
+<!-- 
+    onclick -> quando clicar
+    innertext -> altera o texto do elemento
+    onClick="innerText='Foi Clicado'" -> altera o texto do elemento para Foi Clicado
+    
+    
+OBS: o HTML só aceita aspas duplas e o JS aceita as simples e as duplas
+desta forma, quando for utilizar concomitantes, usar no html aspas duplas
+e na parte referente ao JS usar aspas simples para evitar erro de fechamento
+de aspas pelo uso de mesmo tipo
+
+-->
+
+-------------------------------------------------------------------
+JAVASCRIPT
+-------------------------------------------------------------------
+
+
+    function onOver(elemento){
+        elemento.style.backgroundColor = "blue";     }
+/* o parametro elemento que foi passado (this) recebe estilo de cor de fundo*/
+    function onOut(elemento){
+        elemento.style.backgroundColor = "blueviolet";  }
+/* o parametro elemento que foi passado (this) recebe estilo de cor de fundo*/
+    function clicar(elemento){
+        if (elemento.style.width === "500px") {
+/* Se o parametro elemento tiver largura igual a 500px*/
+            imagem.style.width = "100%";      }      
+        else if (elemento.style.width === "100%") {
+            imagem.style.width = "500px";     }
+        else { // Se a imagem com tamanho = 500px, volta para 300px
+            elemento.style.width = "300px";   }    }
+/* O parametro elemento recebe largura de 300px*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
