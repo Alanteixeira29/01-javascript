@@ -553,7 +553,7 @@ JAVASCRIPT
 /* o parametro elemento que foi passado (this) recebe estilo de cor de fundo*/
     function clicar(elemento){
         if (elemento.style.width === "500px") {
-/* Se o parametro elemento tiver largura igual a 500px*/
+/* Se o parametro elemento tiver largura exatamente igual a 500px*/
             imagem.style.width = "100%";      }      
         else if (elemento.style.width === "100%") {
             imagem.style.width = "500px";     }
